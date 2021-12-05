@@ -14,10 +14,10 @@
                     <a class="nav-link" href="{{ route('home') }}">{{ __('Search') }}</a>|
 
 
-                <a class="nav-link" href="{{ route('user.create') }}">{{ __('Profile') }}</a>|
+                <a class="nav-link" href="{{ route('home') }}">{{ __('Profile') }}</a>|
 
 
-                <a class="nav-link" href="{{ route('home') }}">{{ __('Cat') }}</a>|
+                <a class="nav-link" href="{{ route('cats') }}">{{ __('Cat') }}</a>|
 
 
                 <a class="nav-link" href="{{ route('home') }}">{{ __('Gallery') }}</a>|
@@ -39,9 +39,10 @@
     </div>
 
 
-  <!--  <div class="panel-default" >-->
+  <div class="panel-default" >
 
-    <div class="card-body">
+
+
 
           <form method="POST" action="/search" >
 
@@ -107,9 +108,10 @@
 
 
 
-        </div>
+
 
 </form>
+
 
 <div id="map"></div>
 

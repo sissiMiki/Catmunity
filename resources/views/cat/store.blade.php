@@ -1,15 +1,15 @@
-@extends('layouts.main')
-@section('pageTitle','cat')
+@extends('layouts.app')
+@section('pageTitle','cat.store')
 @section('content')
 
-       <div class="button"><a href="{{ route('cat.index') }}" class="btn btn-outline-secondary">Alle catem</a></div>
-        <h1>{{ $cat->title }}</h1>
+       <div class="button"><a href="{{ route('cat.index') }}" class="btn btn-outline-secondary">cats</a></div>
+        <h1>{{ $cat->name }}</h1>
         <p>
-            <small>erzeugt am: {{ $cat->created_at->format('d.m.Y H:i:s') }}</small>
+            <small>created: {{ $cat->created_at->format('d.m.Y H:i:s') }}</small>
             <br>
-            <small>geändert am: {{ $cat->updated_at->format('d.m.Y H:i:s') }}</small>
+            <small>updated: {{ $cat->updated_at->format('d.m.Y H:i:s') }}</small>
         </p>
-        <p>{{ $cat->body ? $cat->body : 'keine Beschreibung vorhanden!' }}</p>
+        <p>{{ $cat->name ? $cat->description : 'no description' }}</p>
 
 
 @endsection

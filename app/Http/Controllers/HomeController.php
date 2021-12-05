@@ -27,9 +27,4 @@ class HomeController extends Controller
         return view('home');
     }
 
-   /* public function index()
-    {
-        $posts = Post::with('getCatsitter')->get();
-        return view('home', compact('posts'));
-    }*/
 }

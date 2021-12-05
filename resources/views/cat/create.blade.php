@@ -3,11 +3,11 @@
 @section('content')
 <div class="container">
 	<div class="col-md-12">
-		<form method="POST" action="/pet/new">
+		<form method="POST" action="/cat/store">
 
 			{{  csrf_field() }}
 			<div class="form-group">
-				<label for="name">Pet Name: </label>
+				<label for="name">Cat: </label>
 				<input type="text" class="form-control" id="name" name="name">
 			</div>
 
@@ -31,7 +31,7 @@
             </div>
 
             <div class="form-group">
-				<label for="name">Details: </label>
+				<label for="description">Description: </label>
 				<textarea type="text" rows="5" class="form-control" id="description" name="description"></textarea>
 				<small id="detailsHelp" class="form-text text-muted">Please provide an as-detailed-as-possible description of your pet so that potential pet-sitters can have a better knowledge of your needs.</small>
 			</div>
@@ -39,7 +39,7 @@
 
 
 			<div class="form-group">
-				<button type="submit" class="btn btn-primary">Add Pet</button>
+				<button type="submit" class="btn btn-primary">add cat</button>
 			</div>
 
 

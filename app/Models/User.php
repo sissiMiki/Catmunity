@@ -59,17 +59,16 @@ class User extends Authenticatable
         return $this->hasMany(Cat::class, 'catowner');
     }
 
-    public function addCat(Cat $cat)
-    {
-        $this->cats()->save($cat);
-        // $post->save();
-    }
 
     public function roles(){
         return $this->belongsTo(Role::class,'role_id','id');
     }
 
-
+/*public function addCat(Cat $cat)
+    {
+        $this->cats()->save($cat);
+        return
+    }*/
 
 
 
