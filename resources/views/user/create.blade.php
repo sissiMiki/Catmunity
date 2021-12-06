@@ -35,7 +35,7 @@
                   @enderror
 
                 <div class="form-group">
-                  <label for="password_confirmation">{{ __('Passwort Wiederholung') }}</label>
+                  <label for="password_confirmation">{{ __('Confirm password') }}</label>
                   <input type="password" class="form-control" name="password_confirmation" id="password_confirmation">
                 </div>
 

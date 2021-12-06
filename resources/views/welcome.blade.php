@@ -99,20 +99,20 @@
             </div>
             @endif
 
-        <div class content="width=device-width">
-            <div class content="title" class="center">
+        <div content="width=device-width">
+            <div content="title" >
 
                 <h1>Be Part of The Catmunity In Your Neighbourhood</h1>
             </div>
 
         </div>
 
-            <div class="center">
+            <div id="cat" >
                 <img src="{{ URL::to('/pics/cat.png') }}">
 
                     <span>(because we all know cats are the best)</span>
              <hr>
-                    <section id="socialmedia"class="center">
+                    <section id="socialmedia">
 
                         <div class="container" data-aos="zoom-in" data-aos-delay="100"class="btn-link ">
 

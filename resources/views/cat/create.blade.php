@@ -5,7 +5,8 @@
 	<div class="col-md-12">
 		<form method="POST" action="/cat/store">
 
-			{{  csrf_field() }}
+            @csrf
+
 			<div class="form-group">
 				<label for="name">Cat: </label>
 				<input type="text" class="form-control" id="name" name="name">
@@ -31,8 +32,8 @@
             </div>
 
             <div class="form-group">
-				<label for="description">Description: </label>
-				<textarea type="text" rows="5" class="form-control" id="description" name="description"></textarea>
+				<label for="details">Description: </label>
+				<textarea type="text" rows="5" class="form-control" id="details" name="details"></textarea>
 				<small id="detailsHelp" class="form-text text-muted">Please provide an as-detailed-as-possible description of your pet so that potential pet-sitters can have a better knowledge of your needs.</small>
 			</div>
 

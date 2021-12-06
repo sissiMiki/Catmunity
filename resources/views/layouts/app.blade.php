@@ -30,9 +30,7 @@
     integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
     crossorigin=""></script>
 
-    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css" >
-    <link rel="stylesheet" href="/js/toastr/build/toastr.min.css">
-    <link rel="stylesheet" href="/css/style.css">
+
 
 </head>
 <body>
@@ -42,7 +40,7 @@
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{  'Catmunity' }}
                 </a>
-                <img src="{{ URL::to('/pics/cat.logo.png') }}" class="img-responsive" >
+                <img src="{{ URL::to('/pics/cat.logo.png') }}" >
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -127,5 +125,6 @@
             </svg>
 <br>
 <div><b>#petmunity</b></div></footer>
+
 </body>
 </html>

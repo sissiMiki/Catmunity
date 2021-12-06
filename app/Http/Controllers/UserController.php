@@ -64,12 +64,12 @@ class UserController extends Controller
 
     public function update(Request $request, User $user)
     {
-        $validateData = $request->validate([
+        /*$validateData = $request->validate([
             'name' => 'required',
             'email' => 'required|email:filter,dns|unique:users,email,'.$user->id.',id',
             'password' =>['nullable','confirmed','password'=>Password::min(8)->mixedCase()->numbers()->symbols()],
             'role' => 'nullable|exists:roles,id'
-        ]);
+        ]);*/
 
         $user->name = $request->name;
         $user->email = $request->email;

@@ -23,12 +23,12 @@
                   <td>{{ $item->name }}</td>
                   <td>{{ $item->email }}</td>
                   <td>{{ $item->role->role ?? '' }}</td>
-                  <td><a href="{{route('user.edit',$item->id)}}" class="btn btn-outline-dark fa fa-edit"></a></td>
+                  <td><a href="{{route('user.edit',$item->id)}}" class="btn btn-outline-dark fa fa-edit">edit</a></td>
                   <td>
                     <form action="{{ route('user.delete',$item->id) }}" method="POST" class="delete" data-title="{{ $item->email }}" data-body="Wollen Sie den/die User*in <strong> {{ $item->email }}</strong> löschen!">
                       @method('delete')
                       @csrf
-                      <button type="submit" class="btn btn-outline-danger fa fa-trash"></button>
+                      <button type="submit" class="btn btn-outline-danger fa fa-trash">delete</button>
                   </form>
                   </td>
                 </tr>

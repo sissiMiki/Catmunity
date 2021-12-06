@@ -10,8 +10,8 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Mail;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Support\Facades\DB;
-use App\Cat;
-use App\Post;
+use App\Models\Cat;
+
 
 
 
@@ -56,7 +56,7 @@ class User extends Authenticatable
 
     public function cats()
     {
-        return $this->hasMany(Cat::class, 'catowner');
+        return $this->hasMany(Cat::class);
     }
 
 
@@ -64,11 +64,8 @@ class User extends Authenticatable
         return $this->belongsTo(Role::class,'role_id','id');
     }
 
-/*public function addCat(Cat $cat)
-    {
-        $this->cats()->save($cat);
-        return
-    }*/
+
+
 
 
 
