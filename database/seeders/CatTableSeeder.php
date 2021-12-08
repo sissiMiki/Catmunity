@@ -29,8 +29,8 @@ class CatTableSeeder extends Seeder
                     Cat::create([
                         'owner' => $users[$i]->id,
                         'name' => $faker->lastname,
-                        'breed' => $faker->city,
-                        'description' => $faker->text,
+                        'breed' => $faker->breed,
+                        'details' => $faker->text,
                        //'gender' => $faker->randomElement(['male','female']),
 
                     ]);

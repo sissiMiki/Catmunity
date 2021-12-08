@@ -25,19 +25,10 @@ class CreateRolesTable extends Migration
             $table->string('name');
             $table->timestamps();
 
-            $table->unsignedInteger('user_id')->nullable()->unsigned();
+            $table->unsignedInteger('user_id')->nullable()->unsigned();// can be removed
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 
         });
-
-
-   /* Schema::create('roles', function($table)
-    {
-
-
-
-
-});*/
 
     }
 

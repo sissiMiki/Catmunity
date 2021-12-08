@@ -50,7 +50,7 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'role_id' => ['required'],
+            'role_id' => ['required','unsignedInteger'],
 
         ]);
     }
@@ -73,8 +73,8 @@ class RegisterController extends Controller
 
         ]);
 
-        $role =Role::select('id',[1]) ->where ('user')->first();
-        $user->roles(1)->attach($role);
+        //$role =Role::select('id',[1]) ->where ('user')->first();
+        //$user->roles()->attach($role);
 
         return $user;
     }

@@ -1,8 +1,8 @@
-@extends('layouts.main')
-@section('pageTitle','mitarbeiter')
+@extends('layouts.app')
+@section('pageTitle','User')
 
 @section('content')
-        <h1>User*innen</h1>
+        <h1>User</h1>
         <div class="button"><a href="{{ route('user.create') }}" class="btn btn-outline-secondary">New User</a></div>
 
         <table class="table table-striped">
@@ -12,7 +12,7 @@
                 <th scope="col">Name</th>
                 <th scope="col">E-Mail</th>
                 <th scope="col">Role</th>
-                <th scope="col"></th>
+                <th scope="col">Services</th>
                 <th scope="col"></th>
               </tr>
             </thead>
@@ -23,12 +23,12 @@
                   <td>{{ $item->name }}</td>
                   <td>{{ $item->email }}</td>
                   <td>{{ $item->role->role ?? '' }}</td>
-                  <td><a href="{{route('user.edit',$item->id)}}" class="btn btn-outline-dark fa fa-edit"></a></td>
+                  <td><a href="{{route('user.edit',$item->id)}}" class="btn btn-outline-dark fa fa-edit">edit</a></td>
                   <td>
-                    <form action="{{ route('user.destroy',$item->id) }}" method="POST" class="delete" data-title="{{ $item->email }}" data-body="Wollen Sie den/die User*in <strong> {{ $item->email }}</strong> löschen!">
+                    <form action="{{ route('user.delete',$item->id) }}" method="POST" class="delete" data-title="{{ $item->email }}" data-body="Wollen Sie den/die User*in <strong> {{ $item->email }}</strong> löschen!">
                       @method('delete')
                       @csrf
-                      <button type="submit" class="btn btn-outline-danger fa fa-trash"></button>
+                      <button type="submit" class="btn btn-outline-danger fa fa-trash">delete</button>
                   </form>
                   </td>
                 </tr>

@@ -4,44 +4,59 @@ use App\Http\Controllers\Usercontroller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-//1.Methode
-    //1. Parameter -> URI
-    //2. Aktion
 
 Auth::routes();
 
 
-
-Route::get('/', 'HomeController@index');
+//HOME
+Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/user/edit', 'ProfileController@edit');
-Route::get('/user/{user}', 'ProfileController@index');
-Route::post('/user/edit', 'ProfileController@update');
+// Route::get('/user/edit', 'ProfileController@edit');
+// Route::get('/user/{user}', 'ProfileController@index');
+// Route::post('/user/edit', 'ProfileController@update');
 
-Route::get('/user','UserController@index');
+
+
+
+
+//SEARCH
+
+
+
+//USER
+Route::get('/user','UserController@index')->name('user');
 Route::get('/user/create','UserController@create')->name('user.create');
-Route::get('/user/edit','UserController@edit');
+Route::get('/user/edit','UserController@edit')->name('user.edit');
+Route::post('/user/store', 'UserController@store')->name('user.store');
+
+//GALLERY
+Route::get('/gallery/{img}','UserController@showimg')->name('user.gallery');
+Route::get('/gallery/download/{img}','UserController@download')->name('user.download');
+Route::resource('/gallery','UserController')->except('destroy');
+
+
+//CAT
+Route::get('/cats','CatController@index')->name('cats');
+Route::get('/cat/create', 'CatController@create')->name('cat.create');//show form
+Route::get('/cat/edit','CatController@edit')->name('cat.edit');
+Route::put('/cat/update', 'CatController@update')->name('cat.update');
+Route::delete('/cat/delete','CatController@delete')->name('cat.delete');
+Route::post('/cat/store', 'CatController@store')->name('cat.store');
+
+//SERVICE
 
 
 
-Route::get('/cat/create', 'CatController@create');
-Route::get('/cat','CatController@index');
-Route::post('/cat','CatController@store');
+
+
+
+
+
+
 
 
 

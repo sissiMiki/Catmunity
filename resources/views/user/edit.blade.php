@@ -1,8 +1,8 @@
-@extends('layouts.main')
-@section('pageTitle','User*Inne')
+@extends('layouts.app')
+@section('pageTitle','User')
 @section('content')
-        <h1>User*in</h1>
-        <div class="button"><a href="{{route('user.index')}}" class="btn btn-outline-secondary">Alle User*innen</a></div>
+        <h1>User</h1>
+        <div class="button"><a href="{{route('user.index')}}" class="btn btn-outline-secondary">User</a></div>
 
         <div id="form" class="form">
             <form action="{{ route('user.update',$user->id)}}" method="POST">
@@ -22,18 +22,8 @@
                       <div class="invalid-feedback">{{ $message }}</div>
                    @enderror
                 </div>
-                <div class="form-group">
-                    <label for="password">{{ __('Passwort') }}</label>
-                    <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" id="password">
-                    @error('password')
-                      <div class="invalid-feedback">{{ $message }}</div>
-                   @enderror
-                </div>
-                <div class="form-group">
-                  <label for="password_confirmation">{{ __('Passwort Wiederholung') }}</label>
-                  <input type="password" class="form-control" name="password_confirmation" id="password_confirmation">
-                </div>
-                <div class="form-group">
+
+               <div class="form-group">
                   <label for="role">Roles</label>
                   <select name="role" id="role" class="form-control @error('role') is-invalid @enderror">
                       <option value="">choose role</option>
@@ -44,8 +34,14 @@
                   @error('role')
                       <div class="invalid-feedback">{{ $message }}</div>
                   @enderror
+
+                <div class="form-group">
+                  <label for="password_confirmation">{{ __('comfirm password') }}</label>
+                  <input type="password" class="form-control" name="password_confirmation" id="password_confirmation">
                 </div>
-                <button type="submit" class="btn btn-dark">ändern</button>
+
+                </div>
+                <button type="submit" class="btn btn-dark">update</button>
               </form>
         </div>
 @endsection
